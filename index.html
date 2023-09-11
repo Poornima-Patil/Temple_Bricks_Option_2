@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Image Carousel</title>
+    <link rel="stylesheet" href="./output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+</head>
+
+<body class="font-quicksand">
+
+    <div id="navbar-menu" class="hidden z-10 pl-10 pt-4 pr-8 md:flex font-quicksand text-lg tracking-wide backdrop-blur-md fixed top-0 w-full h-16 text-black">
+
+        <div class="text-center mr-14 font-bold flex gap-1">
+            <img src="./images/LOGO .png" class="h-10 w-10">
+            <img src="./images/NAME .png" class="h-10 w-20">
+        </div>
+
+        <div class="w-full">
+            <ul class="flex justify-end space-x-6">
+                <a href="# ">
+                    <li class="font-bold backdrop-blur text-primary-color"> Home </li>
+                </a>
+
+                <a href="# " class=" ">
+                    <li class="relative group right-4 "> About Us
+                        <span class="absolute -bottom-1 mx-1 text-black">
+                             <i class="fa-solid fa-sm fa-angle-down menu-caret">
+                            </i> 
+                        </span>
+                        <div class="absolute font-thin text-md w-40 bg-primary-color rounded-lg hidden group-hover:block ">
+                            <ul class=" ">
+                                <a href="# ">
+                                    <li class="border-b-[1px] border-slate-50 hover:bg-primary-dark-shade py-2 rounded-t-lg pl-4 "> Who Are We </li>
+                                </a>
+
+                                <li class="border-b-[1px] border-slate-50 hover:bg-primary-dark-shade py-2 pl-4 "> Our Team </li>
+                                <li class="hover:bg-primary-dark-shade py-2 pl-4 hover:rounded-b-lg "> Why Donate Us </li>
+                            </ul>
+                        </div>
+
+                    </li>
+                </a>
+
+                <a href="# ">
+                    <li class="relative group right-4 "> What We Do
+                        <span class="absolute -bottom-1 mx-1 menu-caret text-black">
+                        <i class="fa-solid fa-sm fa-angle-down">
+                       </i> 
+                   </span>
+                        <div class="absolute font-thin text-md w-40 bg-primary-color rounded-lg hidden group-hover:block ">
+                            <ul class=" ">
+                                <a href="# ">
+                                    <li class="border-b-[1px] border-slate-50 hover:bg-primary-dark-shade py-2 rounded-t-lg pl-4 "> Rescue </li>
+                                </a>
+
+                                <li class="border-b-[1px] border-slate-50 hover:bg-primary-dark-shade py-2 pl-4 "> Release </li>
+                                <li class="border-b-[1px] border-slate-50 hover:bg-primary-dark-shade py-2 pl-4 "> Volunteer </li>
+                                <li class="border-b-[1px] border-slate-50 hover:bg-primary-dark-shade py-2 pl-4 "> Rehabilitation </li>
+                                <li class="hover:bg-primary-dark-shade py-2 pl-4 hover:rounded-b-lg "> Treatment </li>
+
+                            </ul>
+                        </div>
+                    </li>
+                </a>
+                <a href="# ">
+                    <li> Success Stories </li>
+                </a>
+                <a href="# ">
+                    <li> Gallery </li>
+                </a>
+                <a href="# ">
+                    <li> Blog </li>
+                </a>
+
+                <a href="# ">
+                    <li> Contact Us </li>
+                </a>
+                <a href="# ">
+                    <li class="bg-primary-color px-4 rounded-2xl "> Donate Now </li>
+                </a>
+
+            </ul>
+
+        </div>
+    </div>
+
+
+
+
+    <div class="flex md:hidden justify-between bg-slate-200">
+        <div class="m-4">
+            LOGO
+        </div>
+        <div class="mx-8 my-4">
+            <a href="#">
+                <button id="mb-menu">
+                    <span id="menu-icon">
+                <i class="fa-solid fa-bars fa-beat fa-xl"></i>
+                </span>
+
+                <span id="close-icon" class="hidden">
+                <i class="fa-solid fa-xmark fa-beat-fade fa-2xl"></i>
+                </span>
+
+                </button>
+            </a>
+
+        </div>
+
+
+        <!--<div class="mx-4 ">
+            <div class="relative ">
+                <button class="relative group " id="mb-menu ">
+                  <div class="relative flex overflow-hidden items-center justify-center rounded-full w-[50px] h-[50px] transform transition-all bg-slate-900 ring-0 ring-gray-300 hover:ring-8 group-focus:ring-4 ring-opacity-30 duration-200 shadow-md ">
+                    <div class="flex flex-col justify-between w-[20px] h-[20px] transform transition-all duration-300 origin-center overflow-hidden group-focus:-translate-x-1.5 group-focus:rotate-180 ">
+                      <div class="bg-white h-[2px] w-7 transform transition-all duration-300 origin-left group-focus:rotate-[42deg] group-focus:w-2/3 delay-150 "></div>
+                      <div class="bg-white h-[2px] w-7 rounded transform transition-all duration-300 group-focus:translate-x-10 "></div>
+                      <div class="bg-white h-[2px] w-7 transform transition-all duration-300 origin-left group-focus:-rotate-[42deg] group-focus:w-2/3 delay-150 "></div>
+                    </div>
+                  </div>
+                </button>
+            </div> -->
+
+
+        <div class="hidden absolute left-0 text-white bg-slate-900 pt-4 w-screen border-2 top-14 z-50" id="mb-menu-list">
+            <ul class="w-screen h-screen flex flex-col text-center ">
+                <a href="# " class="py-2 ">
+                    <li class="border-b-[1px] border-slate-300 pl-4 text-primary-color pb-2 "> HOME </li>
+                </a>
+                <a href="#" class="py-1 ">
+                    <li class="border-b-[1px] border-slate-300 pl-4 pb-2 ">
+                        <span id="abt-menu-icon">
+                                About Us
+                            <span class="mx-1">
+                            <i class="fa-solid fa-sm fa-angle-down ">
+                           </i> 
+                       </span>
+                        </span>
+
+
+                        <div class="font-thin text-md bg-slate-800 w-screen -ml-4 hidden" id="abt-submenu">
+                            <ul class=" ">
+                                <a href="# ">
+                                    <li class="border-[1px] border-black py-2 lg pl-4 "> Who Are We </li>
+                                </a>
+
+                                <li class=" border-[1px] border-black py-2 pl-4 "> Our Team </li>
+                                <li class=" border-[1px] border-black pl-4 py-2 "> Why Donate Us </li>
+                            </ul>
+                        </div>
+                    </li>
+                </a>
+                <a href="# ">
+                    <li class="border-b-[1px] border-slate-300 py-4 pl-4 ">
+                        <span id="what-menu-icon">
+                                What Do We Do
+                            <span class="mx-1">
+                            <i class="fa-solid fa-sm fa-angle-down ">
+                           </i> 
+                       </span>
+                        </span>
+                        <div class="font-thin text-md bg-slate-800 w-screen -ml-4 hidden " id="what-submenu">
+                            <ul class=" ">
+                                <a href="# ">
+                                    <li class="border-[1px] border-black py-2 lg pl-4 "> Rescue </li>
+                                </a>
+
+                                <li class=" border-[1px] border-black py-2 pl-4 "> Release </li>
+                                <li class=" border-[1px] border-black pl-4 py-2 "> Volunteer </li>
+                                <li class=" border-[1px] border-black pl-4 py-2 "> Rehabilitation </li>
+                                <li class="pl-4 pb-2 "> Treatment </li>
+                            </ul>
+                        </div>
+                    </li>
+                </a>
+                <a href="# ">
+                    <li class="border-b-[1px] border-slate-300 py-2 pl-4 "> Success Stories </li>
+                </a>
+                <a href="# ">
+                    <li class="border-b-[1px] border-slate-300 py-2 pl-4 "> Gallery </li>
+                </a>
+                <a href="# ">
+                    <li class="border-b-[1px] border-slate-300 py-2 pl-4 "> Blog </li>
+                </a>
+                <a href="# ">
+                    <li class="border-b-[1px] border-slate-300 py-2 pl-4 "> Contact Us </li>
+                </a>
+                <a href="# ">
+                    <li class="border-b-[1px] border-slate-300 py-2 pl-4 bg-primary-color "> Donate Now </li>
+                </a>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="hero-carousel">
+        <div class="relative carousel-item active">
+            <img class="opacity-40" src="https://images.pexels.com/photos/11174152/pexels-photo-11174152.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 " alt="Image 1 ">
+            <div class="absolute bottom-48 right-10 bg-transparent">
+                <p class="m-4 z-15 text-black text-lg md:text-2xl  font-quicksand"> Small Effort can make Big Change </p>
+                <p class="m-4 text-xl md:text-4xl text-black font-bold"> Your efforts make us save <br> Precious Lives </p>
+                <button class="text-lg m-4 md:text-2xl py-4  text-center px-4 border-primary-color bg-primary-color rounded-full text-white"> Donate Now </button>
+            </div>
+        </div>
+        <div class="carousel-item relative">
+
+            <img class="opacity-40" src="https://images.pexels.com/photos/17987991/pexels-photo-17987991/free-photo-of-cat-on-grass.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 " alt="Image 2 ">
+
+
+            <div class="absolute bottom-20 right-10 bg-transparent">
+                <p class="z-15 text-black text-lg md:text-2xl  font-quicksand m-4"> Be their hero! </p>
+                <p class="text-xl md:text-4xl text-black m-4 font-bold"> Open your heart, <br> donate today to protect and save animal lives </p>
+                <button class="text-lg m-4 md:text-2xl py-4 mt-4 text-center px-4 border-primary-color bg-primary-color rounded-full text-white"> Donate Now </button>
+            </div>
+        </div>
+        <div class="carousel-item relative mx-auto">
+            <img class="opacity-40 object-center" src="https://images.pexels.com/photos/11740854/pexels-photo-11740854.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load " alt="Image 3 ">
+            <div class="absolute bottom-20 right-10 bg-transparent">
+                <p class="z-15 text-black text-lg md:text-2xl  font-quicksand m-4"> Every contribution counts </p>
+                <p class=" text-xl md:text-4xl text-black font-bold m-4"> Join us in the mission <br> to rescue and care for our furry friends </p>
+                <button class="m-4 text-lg md:text-2xl py-4 mt-4 text-center px-4 border-primary-color bg-primary-color rounded-full text-white"> Donate Now </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Us Section-->
+    <div class="m-4 md:m-16 flex-col md:flex md:flex-row justify-between">
+        <div class="w-full md:basis-1/2 md:w-full">
+            <div class="border-l-4 px-4 border-black mt-8">
+                <p class="text-2xl font-bold"> About Us </p>
+                <p class="text-lg"> Who we are? </p>
+
+            </div>
+            <div class="mt-4 mb-2">
+                <p>
+                    At Dog Home Foundation, we are dedicated to providing a lifeline for ill, injured, and accidental animals in need. Our organization specializes in rescuing, treating, and sheltering these vulnerable animals, giving them a second chance at a happy and
+                    healthy life.
+                </p>
+                <button class="bg-black text-white px-4 py-2 rounded-full mt-4 font-bold"> More About Us > </button>
+            </div>
+        </div>
+        <div class="w-full  md:w-1/2 h-60 basis-1/2">
+            <div class="h-full">
+                <div class="aspect-w-16 aspect-h-9 h-full">
+                    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" class="w-full h-full rounded-lg" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="m-4 flex-col md:flex-row md:flex-nowrap md:m-16 flex md:justify-evenly gap-2">
+        <div class="md:basis-1/4 bg-[#eeeeee] text-center p-4 rounded-lg">
+            <p class="text-5xl text-primary-color font-bold"> 48K + </p>
+            <p class="font-bold mt-2 text-xl"> Made Happy </p>
+            <p class="font-bold text-xl"> Animal </p>
+        </div>
+        <div class="md:basis-1/4 bg-[#eeeeee] text-center p-4 rounded-lg">
+            <p class="text-5xl text-primary-color font-bold"> 500 + </p>
+            <p class="font-bold mt-2 text-xl"> Permanent </p>
+            <p class="font-bold text-xl"> Resident </p>
+        </div>
+        <div class="md:basis-1/4 bg-[#eeeeee] text-center p-4 rounded-lg">
+            <p class="text-5xl text-primary-color font-bold"> 180 + </p>
+            <p class="font-bold mt-2 text-xl"> Successful </p>
+            <p class="font-bold text-xl"> Adoption </p>
+        </div>
+        <div class="md:basis-1/4 bg-[#eeeeee] text-center p-4 rounded-lg">
+            <p class="text-5xl text-primary-color font-bold"> 18M + </p>
+            <p class="font-bold mt-2 text-xl"> Donation </p>
+            <p class="font-bold text-xl"> Completed </p>
+        </div>
+    </div>
+
+
+    <!-- Make A Donation Section -->
+    <div class="bg-primary-light-shade py-4">
+        <div class="border-l-4 px-4 border-black mt-8 m-16">
+            <p class="text-2xl font-bold"> Make A Donation </p>
+            <p class="text-lg"> Featured Campaign </p>
+
+        </div>
+
+
+        <div class="hidden md:flex  m-10 ml-20 gap-4">
+            <div class="flex flex-col space-y-4 w-1/4 border-black  p-8 text-white bg-primary-color rounded-lg">
+                <div class="w-full">
+                    <img class="w-full h-28 aspect-auto" src="./images/hero1.jpg">
+
+                </div>
+                <div>
+                    <p class="font-bold tracking-widest">
+                        Donate To Build Gaushala At Dog Home Foundation
+                    </p>
+                </div>
+                <div>
+                    We extend out heartfelt gratitude for your ongoing support and dedication to our mission
+                </div>
+
+                <div>
+                    <button class="border-2 px-4 py-2 rounded-full">  Make a Donation </button>
+                </div>
+            </div>
+
+
+            <div class="flex flex-col space-y-4 w-1/4 border-black  p-8 text-white bg-black rounded-lg">
+                <div class="w-full">
+                    <img class="w-full h-28 aspect-auto" src="./images/hero1.jpg">
+
+                </div>
+                <div>
+                    <p class="font-bold tracking-widest">
+                        Donate To Build Gaushala At Dog Home Foundation
+                    </p>
+                </div>
+                <div>
+                    We extend out heartfelt gratitude for your ongoing support and dedication to our mission
+                </div>
+
+                <div>
+                    <button class="border-2 px-4 py-2 rounded-full">  Make a Donation </button>
+                </div>
+            </div>
+
+            <div class="flex flex-col space-y-4 w-1/4 border-black  p-8 text-white bg-[#1bb7bc] rounded-lg">
+                <div class="w-full">
+                    <img class="w-full h-28 aspect-auto" src="./images/hero1.jpg">
+
+                </div>
+                <div>
+                    <p class="font-bold tracking-widest">
+                        Donate To Build Gaushala At Dog Home Foundation
+                    </p>
+                </div>
+                <div>
+                    We extend out heartfelt gratitude for your ongoing support and dedication to our mission
+                </div>
+
+                <div>
+                    <button class="border-2 px-4 py-2 rounded-full">  Make a Donation </button>
+                </div>
+            </div>
+
+            <div class="flex flex-col space-y-4 w-1/4 border-black  p-8 text-white bg-[#2b6eff] rounded-lg">
+                <div class="w-full">
+                    <img class="w-full h-28 aspect-auto" src="./images/hero1.jpg">
+
+                </div>
+                <div>
+                    <p class="font-bold tracking-widest">
+                        Donate To Build Gaushala At Dog Home Foundation
+                    </p>
+                </div>
+                <div>
+                    We extend out heartfelt gratitude for your ongoing support and dedication to our mission
+                </div>
+
+                <div>
+                    <button class="border-2 px-4 py-2 rounded-full">  Make a Donation </button>
+                </div>
+            </div>
+
+
+            <!-- Add more slides as needed -->
+
+        </div>
+
+    </div>
+
+    <div class="ml-20 mr-20 border-10 border-red-700 md:hidden">
+        <div class="slider">
+
+            <div class="flex flex-col space-y-4  text-white bg-primary-color rounded-lg">
+                <div class="m-4">
+                    <img class=" w-full h-28 aspect-auto" src="./images/hero1.jpg">
+
+                </div>
+                <div class="m-4">
+                    <p class="font-bold tracking-widest">
+                        Donate To Build Gaushala At Dog Home Foundation
+                    </p>
+                </div>
+                <div class="m-4">
+                    We extend out heartfelt gratitude for your ongoing support and dedication to our mission
+                </div>
+
+                <div class="m-4">
+                    <button class="border-2 px-4 py-2 rounded-full mb-4">  Make a Donation </button>
+                </div>
+            </div>
+
+
+
+            <div class="flex flex-col space-y-4  text-white bg-primary-color rounded-lg">
+                <div class="m-4">
+                    <img class="w-full h-28 aspect-auto" src="./images/hero1.jpg">
+
+                </div>
+                <div class="m-4">
+                    <p class="font-bold tracking-widest">
+                        Donate To Build Gaushala At Dog Home Foundation
+                    </p>
+                </div>
+                <div class="m-4">
+                    We extend out heartfelt gratitude for your ongoing support and dedication to our mission
+                </div>
+
+                <div class="m-4">
+                    <button class="border-2 px-4 py-2 rounded-full mb-4">  Make a Donation </button>
+                </div>
+            </div>
+
+
+            <div class="flex flex-col space-y-4  text-white bg-primary-color rounded-lg">
+                <div class="m-4">
+                    <img class="w-full h-28 aspect-auto" src="./images/hero1.jpg">
+
+                </div>
+                <div class="m-4">
+                    <p class="font-bold tracking-widest">
+                        Donate To Build Gaushala At Dog Home Foundation
+                    </p>
+                </div>
+                <div class="m-4">
+                    We extend out heartfelt gratitude for your ongoing support and dedication to our mission
+                </div>
+
+                <div class="m-4">
+                    <button class="border-2 px-4 py-2 rounded-full mb-4">  Make a Donation </button>
+                </div>
+            </div>
+
+
+            <div class="flex flex-col space-y-4  text-white  bg-[#2b6eff]  rounded-lg">
+                <div class="m-4">
+                    <img class=" w-full h-28 aspect-auto" src="./images/hero1.jpg">
+
+                </div>
+                <div class="m-4">
+                    <p class="font-bold tracking-widest">
+                        Donate To Build Gaushala At Dog Home Foundation
+                    </p>
+                </div>
+                <div class="m-4">
+                    We extend out heartfelt gratitude for your ongoing support and dedication to our mission
+                </div>
+
+                <div class="m-4">
+                    <button class="border-2 px-4 py-2 rounded-full mb-4">  Make a Donation </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class=" flex border-10 bg-[url('https://images.pexels.com/photos/9255240/pexels-photo-9255240.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load')] bg-cover bg-opacity-75 flex-wrap-reverse md:flex-nowrap p-10">
+        <div class="slider w-full md:w-1/2">
+
+            <div class="" style="display:flex;flex-wrap:wrap;">
+                <div class="sm:basis-full md:basis-1/2">
+                    <img class="h-full" src="./images/hero1.jpg">
+
+                </div>
+                <div class="sm:basis-full md:basis-1/2 bg-white p-4">
+                    <p class="font-bold tracking-widest">
+                        <p class="font-bold"> COWS </p>
+                        Donate To Build Gaushala At Dog Home Foundation We extend out heartfelt gratitude for your ongoing support and dedication to our mission Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium dicta facere architecto beatae neque tempore
+                        ipsam deleniti, sit porro? Sit tempora, odit veniam non dignissimos totam hic incidunt nulla modi?
+                    </p>
+                    <div class="mt-4">
+                        <button class="border-2 px-4 py-2 rounded-full mb-4 border-primary-color">  Make a Donation </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div style="display:flex;flex-wrap:wrap;">
+                <div class="sm:basis-full md:basis-1/2">
+                    <img class="h-full" src="https://images.pexels.com/photos/5255202/pexels-photo-5255202.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+
+                </div>
+                <div class="sm:basis-full md:basis-1/2 bg-white p-4">
+                    <p class="font-bold tracking-widest">
+                        <p class="font-bold"> DOGS </p>
+                        Donate To Build Gaushala At Dog Home Foundation We extend out heartfelt gratitude for your ongoing support and dedication to our mission Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo officia labore adipisci quaerat ea odio repellendus
+                        tempore vero quisquam, optio possimus! Non modi, quasi esse sapiente pariatur vero culpa autem.
+                    </p>
+                    <div class="mt-4">
+                        <button class="border-2 px-4 py-2 rounded-full mb-4 border-primary-color">  Make a Donation </button>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display:flex;flex-wrap:wrap;">
+                <div class="sm:basis-full md:basis-1/2">
+                    <img class="h-full" src="https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+
+                </div>
+                <div class="sm:basis-full md:basis-1/2 bg-white p-4">
+                    <p class="font-bold tracking-widest">
+                        <p class="font-bold"> CATS </p>
+                        Donate To Build Gaushala At Dog Home Foundation We extend out heartfelt gratitude for your ongoing support and dedication to our mission Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo officia labore adipisci quaerat ea odio repellendus
+                        tempore vero quisquam, optio possimus! Non modi, quasi esse sapiente pariatur vero culpa autem.
+                    </p>
+                    <div class="mt-4">
+                        <button class="border-2 px-4 py-2 rounded-full mb-4 border-primary-color">  Make a Donation </button>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display:flex;flex-wrap:wrap;">
+                <div class="sm:basis-full md:basis-1/2">
+                    <img class="h-full" src="https://images.pexels.com/photos/3264722/pexels-photo-3264722.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+
+                </div>
+                <div class="sm:basis-full md:basis-1/2 bg-white p-4">
+                    <p class="font-bold tracking-widest">
+                        <p class="font-bold"> CAMELS </p>
+                        Donate To Build Gaushala At Dog Home Foundation We extend out heartfelt gratitude for your ongoing support and dedication to our mission Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo officia labore adipisci quaerat ea odio repellendus
+                        tempore vero quisquam, optio possimus! Non modi, quasi esse sapiente pariatur vero culpa autem.
+                    </p>
+                    <div class="mt-4">
+                        <button class="border-2 px-4 py-2 rounded-full mb-4 border-primary-color">  Make a Donation </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-white font-bold md:ml-10 w-full">
+
+            <div class="border-l-4 px-4">
+                <p class="sm:text-xl text-2xl font-bold"> DONATIONS </p>
+                <p class="text-lg"> Help, Donate & Fundraise </p>
+
+            </div>
+            <p class="text-sm mt-4">
+                Your donation will help us to provide Medical Services, Rescue, and Permanent Shelter to the voiceless so they can receive the love and medical attention they require.
+            </p>
+
+            <div class="mt-4">
+                <button class="border-2 px-4 py-2 rounded-full mb-4 bg-primary-color">  Make a Donation </button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="bg-primary-light-shade py-4">
+        <div class="border-l-4 px-4 border-black mt-8 m-16">
+            <p class="text-2xl font-bold"> SUCCESS STORIES </p>
+            <p class="text-lg"> Our hurt to healded stories </p>
+
+        </div>
+
+        <div class="flex m-10 space-y-4 md:space-y-0 md:space-x-4 flex-wrap md:flex-nowrap">
+            <div class="basis-full md:basis-1/4 p-4 bg-white border-2">
+                <div>
+                    <img class="h-60 w-full" src="https://images.pexels.com/photos/895259/pexels-photo-895259.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+                </div>
+                <div class="text-black text-center">
+                    <p class="font-bold py-4"> Story of Romeo, dog with a tumor on his shoulder</p>
+                    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, odit qui quod deleniti dicta exercitationem quis hic similique quia sequi non eaque quidem nemo voluptates, odio iure ipsam, dolorem reiciendis.</p>
+                </div>
+                <div class="mt-4 text-center">
+                    <button class="border-2 px-4 py-2 rounded-full mb-4 border-primary-color">  Read More </button>
+                </div>
+            </div>
+
+            <div class="basis-full md:basis-1/4 p-4 bg-white border-2">
+                <div>
+                    <img class="h-60 w-full" src="https://images.pexels.com/photos/895259/pexels-photo-895259.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+                </div>
+                <div class="text-black text-center">
+                    <p class="font-bold py-4"> Story of Romeo, dog with a tumor on his shoulder</p>
+                    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, odit qui quod deleniti dicta exercitationem quis hic similique quia sequi non eaque quidem nemo voluptates, odio iure ipsam, dolorem reiciendis.</p>
+                </div>
+                <div class="mt-4 text-center">
+                    <button class="border-2 px-4 py-2 rounded-full mb-4 border-primary-color">  Read More </button>
+                </div>
+            </div>
+
+            <div class="basis-full md:basis-1/4 p-4 bg-white border-2">
+                <div>
+                    <img class="h-60 w-full" src="https://images.pexels.com/photos/895259/pexels-photo-895259.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+                </div>
+                <div class="text-black text-center">
+                    <p class="font-bold py-4"> Story of Romeo, dog with a tumor on his shoulder</p>
+                    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, odit qui quod deleniti dicta exercitationem quis hic similique quia sequi non eaque quidem nemo voluptates, odio iure ipsam, dolorem reiciendis.</p>
+                </div>
+                <div class="mt-4 text-center">
+                    <button class="border-2 px-4 py-2 rounded-full mb-4 border-primary-color">  Read More </button>
+                </div>
+            </div>
+
+            <div class="basis-full md:basis-1/4 p-4 bg-white border-2">
+                <div>
+                    <img class="h-60 w-full" src="https://images.pexels.com/photos/895259/pexels-photo-895259.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+                </div>
+                <div class="text-black text-center">
+                    <p class="font-bold py-4"> Story of Romeo, dog with a tumor on his shoulder</p>
+                    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, odit qui quod deleniti dicta exercitationem quis hic similique quia sequi non eaque quidem nemo voluptates, odio iure ipsam, dolorem reiciendis.</p>
+                </div>
+                <div class="mt-4 text-center">
+                    <button class="border-2 px-4 py-2 rounded-full mb-4 border-primary-color">  Read More </button>
+                </div>
+            </div>
+
+        </div>
+        <div class="m-10 text-center">
+            <button class="border-2 px-4 py-2 rounded-full mb-4 bg-primary-color">  View All Stories  </button>
+        </div>
+    </div>
+
+    <div class="text-white font-bold  w-full bg-[url(https://images.pexels.com/photos/7598081/pexels-photo-7598081.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)] p-10">
+
+        <div class="border-l-4 border-white m-10 p-4">
+            <p class="sm:text-xl md:text-2xl font-bold"> Testimonials </p>
+            <p class="text-lg"> What do people praise about our Foundation? </p>
+
+        </div>
+
+
+        <div class="ml-20 mr-20 hidden md:block">
+            <div class="slider">
+                <div style="display:flex;gap:8px;">
+                    <div class="bg-black text-white basis-1/3 gap-4 p-4">
+                        <div class="flex p-4 gap-4 justify-center">
+                            <img class="w-10 h-10" src="https://tse4.mm.bing.net/th?id=OIP.F14fJlBpgWbzJVXM8MQTTgAAAA&pid=Api&P=0&h=180">
+                            <p> NAME LASTNAME1 </p>
+                            <i class="fa-solid fa-quote-right text-primary-color fa-2xl"></i></p>
+                        </div>
+                        <div class="text-sm">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis repudiandae doloribus deserunt, provident enim ex magni. Deserunt, natus nisi, a rem nihil assumenda explicabo rerum vero commodi, consequuntur nostrum! Ipsum.
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="bg-black text-white basis-1/3 gap-4 p-4">
+                        <div class="flex p-4 gap-4 justify-center">
+                            <img class="w-10 h-10" src="https://tse4.mm.bing.net/th?id=OIP.F14fJlBpgWbzJVXM8MQTTgAAAA&pid=Api&P=0&h=180">
+                            <p> NAME LASTNAME 2 </p>
+                            <i class="fa-solid fa-quote-right text-primary-color fa-2xl"></i></p>
+                        </div>
+                        <div class="text-sm">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis repudiandae doloribus deserunt, provident enim ex magni. Deserunt, natus nisi, a rem nihil assumenda explicabo rerum vero commodi, consequuntur nostrum! Ipsum.
+                        </div>
+                    </div>
+
+
+                    <div class="bg-black text-white basis-1/3 gap-4 p-4">
+                        <div class="flex p-4 gap-4 justify-center">
+                            <img class="w-10 h-10" src="https://tse4.mm.bing.net/th?id=OIP.F14fJlBpgWbzJVXM8MQTTgAAAA&pid=Api&P=0&h=180">
+                            <p> NAME LASTNAME 3 </p>
+                            <i class="fa-solid fa-quote-right text-primary-color fa-2xl"></i></p>
+                        </div>
+                        <div class="text-sm">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis repudiandae doloribus deserunt, provident enim ex magni. Deserunt, natus nisi, a rem nihil assumenda explicabo rerum vero commodi, consequuntur nostrum! Ipsum.
+                        </div>
+                    </div>
+
+                </div>
+                <div style="display:flex;gap:8px;">
+                    <div class="bg-black text-white basis-1/3 gap-4 p-4">
+                        <div class="flex p-4 gap-4 justify-center">
+                            <img class="w-10 h-10" src="https://tse4.mm.bing.net/th?id=OIP.F14fJlBpgWbzJVXM8MQTTgAAAA&pid=Api&P=0&h=180">
+                            <p> NAME LASTNAME4 </p>
+                            <i class="fa-solid fa-quote-right text-primary-color fa-2xl"></i></p>
+                        </div>
+                        <div class="text-sm">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis repudiandae doloribus deserunt, provident enim ex magni. Deserunt, natus nisi, a rem nihil assumenda explicabo rerum vero commodi, consequuntur nostrum! Ipsum.
+                        </div>
+                    </div>
+
+
+                    <div class="bg-black text-white basis-1/3 gap-4 p-4">
+                        <div class="flex p-4 gap-4 justify-center">
+                            <img class="w-10 h-10" src="https://tse4.mm.bing.net/th?id=OIP.F14fJlBpgWbzJVXM8MQTTgAAAA&pid=Api&P=0&h=180">
+                            <p> NAME LASTNAME 5 </p>
+                            <i class="fa-solid fa-quote-right text-primary-color fa-2xl"></i></p>
+                        </div>
+                        <div class="text-sm">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis repudiandae doloribus deserunt, provident enim ex magni. Deserunt, natus nisi, a rem nihil assumenda explicabo rerum vero commodi, consequuntur nostrum! Ipsum.
+                        </div>
+                    </div>
+
+
+                    <div class="bg-black text-white basis-1/3 gap-4 p-4">
+                        <div class="flex p-4 gap-4 justify-center">
+                            <img class="w-10 h-10" src="https://tse4.mm.bing.net/th?id=OIP.F14fJlBpgWbzJVXM8MQTTgAAAA&pid=Api&P=0&h=180">
+                            <p> NAME LASTNAME 6 </p>
+                            <i class="fa-solid fa-quote-right text-primary-color fa-2xl"></i></p>
+                        </div>
+                        <div class="text-sm">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis repudiandae doloribus deserunt, provident enim ex magni. Deserunt, natus nisi, a rem nihil assumenda explicabo rerum vero commodi, consequuntur nostrum! Ipsum.
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="ml-20 mr-20 md:hidden">
+            <div class="slider">
+                <div style="display:flex;gap:8px;">
+                    <div class="bg-black text-white basis-full gap-4 p-4">
+                        <div class="flex p-4 gap-4 justify-center">
+                            <img class="w-10 h-10" src="https://tse4.mm.bing.net/th?id=OIP.F14fJlBpgWbzJVXM8MQTTgAAAA&pid=Api&P=0&h=180">
+                            <p> NAME LASTNAME1 </p>
+                            <i class="fa-solid fa-quote-right text-primary-color fa-2xl"></i></p>
+                        </div>
+                        <div class="text-sm">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis repudiandae doloribus deserunt, provident enim ex magni. Deserunt, natus nisi, a rem nihil assumenda explicabo rerum vero commodi, consequuntur nostrum! Ipsum.
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display:flex;gap:8px;">
+                    <div class="bg-black text-white basis-full gap-4 p-4">
+                        <div class="flex p-4 gap-4 justify-center">
+                            <img class="w-10 h-10" src="https://tse4.mm.bing.net/th?id=OIP.F14fJlBpgWbzJVXM8MQTTgAAAA&pid=Api&P=0&h=180">
+                            <p> NAME LASTNAME 2 </p>
+                            <i class="fa-solid fa-quote-right text-primary-color fa-2xl"></i></p>
+                        </div>
+                        <div class="text-sm">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis repudiandae doloribus deserunt, provident enim ex magni. Deserunt, natus nisi, a rem nihil assumenda explicabo rerum vero commodi, consequuntur nostrum! Ipsum.
+                        </div>
+                    </div>
+                </div>
+                <div style="display:flex;gap:8px;">
+                    <div class="bg-black text-white basis-full gap-4 p-4">
+                        <div class="flex p-4 gap-4 justify-center">
+                            <img class="w-10 h-10" src="https://tse4.mm.bing.net/th?id=OIP.F14fJlBpgWbzJVXM8MQTTgAAAA&pid=Api&P=0&h=180">
+                            <p> NAME LASTNAME 2 </p>
+                            <i class="fa-solid fa-quote-right text-primary-color fa-2xl"></i></p>
+                        </div>
+                        <div class="text-sm">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis repudiandae doloribus deserunt, provident enim ex magni. Deserunt, natus nisi, a rem nihil assumenda explicabo rerum vero commodi, consequuntur nostrum! Ipsum.
+                        </div>
+                    </div>
+                </div>
+                <div style="display:flex;gap:8px;">
+                    <div class="bg-black text-white basis-full gap-4 p-4">
+                        <div class="flex p-4 gap-4 justify-center">
+                            <img class="w-10 h-10" src="https://tse4.mm.bing.net/th?id=OIP.F14fJlBpgWbzJVXM8MQTTgAAAA&pid=Api&P=0&h=180">
+                            <p> NAME LASTNAME 2 </p>
+                            <i class="fa-solid fa-quote-right text-primary-color fa-2xl"></i></p>
+                        </div>
+                        <div class="text-sm">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis repudiandae doloribus deserunt, provident enim ex magni. Deserunt, natus nisi, a rem nihil assumenda explicabo rerum vero commodi, consequuntur nostrum! Ipsum.
+                        </div>
+                    </div>
+                </div>
+                <div style="display:flex;gap:8px;">
+                    <div class="bg-black text-white basis-full gap-4 p-4">
+                        <div class="flex p-4 gap-4 justify-center">
+                            <img class="w-10 h-10" src="https://tse4.mm.bing.net/th?id=OIP.F14fJlBpgWbzJVXM8MQTTgAAAA&pid=Api&P=0&h=180">
+                            <p> NAME LASTNAME 2 </p>
+                            <i class="fa-solid fa-quote-right text-primary-color fa-2xl"></i></p>
+                        </div>
+                        <div class="text-sm">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis repudiandae doloribus deserunt, provident enim ex magni. Deserunt, natus nisi, a rem nihil assumenda explicabo rerum vero commodi, consequuntur nostrum! Ipsum.
+                        </div>
+                    </div>
+                </div>
+                <div style="display:flex;gap:8px;">
+                    <div class="bg-black text-white basis-full gap-4 p-4">
+                        <div class="flex p-4 gap-4 justify-center">
+                            <img class="w-10 h-10" src="https://tse4.mm.bing.net/th?id=OIP.F14fJlBpgWbzJVXM8MQTTgAAAA&pid=Api&P=0&h=180">
+                            <p> NAME LASTNAME 6 </p>
+                            <i class="fa-solid fa-quote-right text-primary-color fa-2xl"></i></p>
+                        </div>
+                        <div class="text-sm">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis repudiandae doloribus deserunt, provident enim ex magni. Deserunt, natus nisi, a rem nihil assumenda explicabo rerum vero commodi, consequuntur nostrum! Ipsum.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <section class="bg-primary-light-shade w-screen overflow-x-hidden">
+        <p class="text-black text-center p-4 font-bold"> Our Partners </p>
+        <div class="slider w-screen h-20 bg-white flex items-center p-4 overflow-hidden mx-10">
+            <ul class="brands list-none">
+                <li class="brand-logo">
+                    <iconify-icon icon="logos:airflow"></iconify-icon>
+                </li>
+                <li class="brand-logo">
+                    <iconify-icon icon="logos:amplitude"></iconify-icon>
+                </li>
+                <li class="brand-logo">
+                    <iconify-icon icon="logos:airbnb"></iconify-icon>
+                </li>
+
+                <li class="brand-logo">
+                    <iconify-icon icon="logos:airflow"></iconify-icon>
+                </li>
+                <li class="brand-logo">
+                    <iconify-icon icon="logos:amplitude"></iconify-icon>
+                </li>
+                <li class="brand-logo">
+                    <iconify-icon icon="logos:airbnb"></iconify-icon>
+                </li>
+
+                <li class="brand-logo">
+                    <iconify-icon icon="logos:airflow"></iconify-icon>
+                </li>
+                <li class="brand-logo">
+                    <iconify-icon icon="logos:amplitude"></iconify-icon>
+                </li>
+                <li class="brand-logo">
+                    <iconify-icon icon="logos:airbnb"></iconify-icon>
+                </li>
+
+                <li class="brand-logo">
+                    <iconify-icon icon="logos:airflow"></iconify-icon>
+                </li>
+                <li class="brand-logo">
+                    <iconify-icon icon="logos:amplitude"></iconify-icon>
+                </li>
+                <li class="brand-logo">
+                    <iconify-icon icon="logos:airbnb"></iconify-icon>
+                </li>
+
+                <li class="brand-logo">
+                    <iconify-icon icon="logos:airflow"></iconify-icon>
+                </li>
+                <li class="brand-logo">
+                    <iconify-icon icon="logos:amplitude"></iconify-icon>
+                </li>
+                <li class="brand-logo">
+                    <iconify-icon icon="logos:airbnb"></iconify-icon>
+                </li>
+
+                <li class="brand-logo">
+                    <iconify-icon icon="logos:airflow"></iconify-icon>
+                </li>
+                <li class="brand-logo">
+                    <iconify-icon icon="logos:amplitude"></iconify-icon>
+                </li>
+                <li class="brand-logo">
+                    <iconify-icon icon="logos:airbnb"></iconify-icon>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <section class="bg-black text-white">
+        <div class="p-10 flex justify-evenly flex-wrap md:flex-nowrap">
+
+            <div class="basis-full md:basis-1/3">
+                <div> <img class="h-16" src="./images/LOGO .png"> <img class="h-10 w-20" src="./images/NAME .png"></div>
+                <div class="mt-4">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt labore deserunt adipisci delectus obcaecati distinctio nesciunt quas perspiciatis eius aspernatur nisi, error harum vel cum corporis. Magnam iure quae mollitia!
+                </div>
+                <div class="my-4 font-bold">
+                    <p> FOLLOW US ON </p>
+                    <div class="flex mt-4 gap-4">
+                        <i class="fa-brands fa-facebook fa-xl" style="color: #135bd8;"></i>
+                        <i class="fa-brands fa-x-twitter fa-xl" style="color: #ededed;"></i>
+                        <i class="fa-brands fa-instagram fa-xl" style="color: #df6d6d;"></i>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex gap-10 basis-full md:basis-1/3">
+                <div>
+                    <p class="font-bold my-4 text-xl"> Informations </p>
+                    <ul class="space-y-4">
+                        <li> Blog </li>
+                        <li> Who we are </li>
+                        <li> Our Team </li>
+                        <li> Success Stories </li>
+                        <li> Contact Us </li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="font-bold my-4 text-xl"> Quick Links </p>
+                    <ul class="space-y-4">
+                        <li> Home </li>
+                        <li> Our Team </li>
+                        <li> Release </li>
+                        <li> Rescue </li>
+                        <li> Treatment </li>
+                        <li> Why Donate to Us</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="basis-full md:basis-1/3">
+                <p class="font-bold my-4 text-xl"> Contact Us </p>
+                <p> ADDRESS </p>
+                <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita esse quam fuga nesciunt aliquid vitae nisi totam quas. Maiores soluta placeat ad, quam vero officiis deserunt quis omnis ratione neque.</p>
+            </div>
+        </div>
+
+    </section>
+</body>
+
+</html>
+
+</div>
+</body>
+
+</html>
