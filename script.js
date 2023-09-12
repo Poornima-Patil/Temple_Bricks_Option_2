@@ -53,14 +53,14 @@ $(document).ready(function() {
 
 
     $(".slider").slick({
-        fade: true,
+        fade: false,
         dots: true, // Show dots for navigation
         infinite: true, // Enable infinite loop
-        speed: 1000, // Transition speed in milliseconds
+        speed: 2000, // Transition speed in milliseconds
         slidesToShow: 1, // Number of slides to show at once
         slidesToScroll: 1, // Number of slides to scroll at a time
         autoplay: true, // Enable autoplay
-        autoplaySpeed: 1000, // Autoplay speed in milliseconds
+        autoplaySpeed: 2000, // Autoplay speed in milliseconds
         cssEase: 'linear',
         responsive: [{
                 breakpoint: 768, // Breakpoint for responsive settings
